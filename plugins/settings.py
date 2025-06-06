@@ -22,7 +22,7 @@ async def settings_menu(client, message: Message):
     ]
 
     await message.reply_photo(
-        photo="https://telegra.ph/file/your-image-url.jpg",  # Replace with actual image URL if needed
+        photo="",  # Replace with actual image URL if needed
         caption=f"Hey ➤ `{message.from_user.first_name}`\n\nHere You Can Change Or Configure Your Settings",
         reply_markup=InlineKeyboardMarkup(buttons)
     )
