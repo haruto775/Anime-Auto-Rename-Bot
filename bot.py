@@ -24,7 +24,9 @@ PORT = Config.PORT
 from pyrogram import Client
 
 app = Client(
-    "RenameBot",
+    "RenameBot", 
+    plugins=dict(root="plugins")  # <- THIS MUST BE PRESENT
+)
     
 class Bot(Client):
 
@@ -80,8 +82,6 @@ class Bot(Client):
 
             except Exception as e:
                 print(f"Failed to send message in chat {chat_id}: {e}")
-
-plugins=dict(root="plugins")  # <- THIS MUST BE PRESENT
-)
+                
 
 Bot().run()
