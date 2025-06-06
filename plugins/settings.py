@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-from database.settings_db import save_dump_channel
+from plugins.database.settings_db import save_dump_channel, get_dump_channel
 from pyromod import listen
 
 @Client.on_message(filters.command("settings"))
