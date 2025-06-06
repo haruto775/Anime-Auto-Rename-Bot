@@ -22,7 +22,7 @@ async def settings_menu(client, message: Message):
     ]
 
     await message.reply_photo(
-        photo="",  # Replace with actual image URL if needed
+        photo="https://graph.org/file/53bab5e049a9b0133c354-b8767e238320087219.jpg",  # Replace with actual image URL if needed
         caption=f"Hey ➤ `{message.from_user.first_name}`\n\nHere You Can Change Or Configure Your Settings",
         reply_markup=InlineKeyboardMarkup(buttons)
     )
