@@ -47,3 +47,21 @@ async def callback_handler(client, callback_query):
         await callback_query.answer("Dump Mode Disabled!", show_alert=True)
     elif data == "close":
         await callback_query.message.delete()
+
+from pyrogram.types import CallbackQuery
+
+@Client.on_callback_query()
+async def settings_callback(client, query: CallbackQuery):
+    data = query.data
+
+    if data == "set_sample":
+        await query.message.edit_text("Please send a sample video (file or URL).")
+        # You can add logic to wait for the next message here
+    elif data == "screenshot":
+        await query.message.edit_text("Screenshot feature is not available yet.")
+    elif data == "set_dump":
+        await query.message.edit_text("Send the dump channel ID (with -100 prefix).")
+    elif data == "set_mode":
+        await query.message.edit_text("Select Dump Mode:\n- Private\n- Public")
+    else:
+        await query.message.edit_text("Unknown option selected.")
