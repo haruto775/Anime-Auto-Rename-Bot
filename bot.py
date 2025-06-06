@@ -25,9 +25,7 @@ from pyrogram import Client
 
 app = Client(
     "RenameBot",
-    plugins=dict(root="plugins")  # <- THIS MUST BE PRESENT
-)
-
+    
 class Bot(Client):
 
     def __init__(self):
@@ -82,5 +80,8 @@ class Bot(Client):
 
             except Exception as e:
                 print(f"Failed to send message in chat {chat_id}: {e}")
+
+plugins=dict(root="plugins")  # <- THIS MUST BE PRESENT
+)
 
 Bot().run()
