@@ -21,6 +21,14 @@ SUPPORT_CHAT = int(os.environ.get("SUPPORT_CHAT", "-1001953724858"))
 
 PORT = Config.PORT
 
+from pyrogram import Client
+
+app = Client(
+    "RenameBot",
+    ...
+    plugins=dict(root="plugins")  # <- THIS MUST BE PRESENT
+)
+
 class Bot(Client):
 
     def __init__(self):
