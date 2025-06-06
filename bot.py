@@ -25,7 +25,6 @@ from pyrogram import Client
 
 app = Client(
     "RenameBot",
-    ...
     plugins=dict(root="plugins")  # <- THIS MUST BE PRESENT
 )
 
