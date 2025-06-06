@@ -1,6 +1,7 @@
-
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from database.settings_db import save_dump_channel
+from pyromod import listen
 
 @Client.on_message(filters.command("settings"))
 async def settings_menu(client, message: Message):
@@ -49,3 +50,10 @@ async def settings_callback(client, query: CallbackQuery):
         await query.message.delete()
     else:
         await query.answer("Unknown option selected.", show_alert=True)
+
+@Client.on_message(filters.text & filters.private)
+async def receive_dump_channel(client, message: Message):
+    if message.reply_to_message and "Send me the dump channel ID" in message.reply_to_message.text:
+        channel_id = message.text.strip()
+        await save_dump_channel(message.from_user.id, channel_id)
+        await message.reply_text(f"✅ Dump Channel set to `{channel_id}`")
