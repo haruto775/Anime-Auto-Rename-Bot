@@ -1,5 +1,6 @@
 from config import Config
 import motor.motor_asyncio
+pip install motor
 
 client = motor.motor_asyncio.AsyncIOMotorClient(Config.DB_URL)
 db = client[Config.DB_NAME]
