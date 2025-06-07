@@ -1,7 +1,7 @@
 from config import Config
 import motor.motor_asyncio
 
-client = motor.motor_asyncio.AsyncIOMotorClient(Config.DB_URI)
+client = motor.motor_asyncio.AsyncIOMotorClient(Config.DB_URL)
 db = client[Config.DB_NAME]
 settings_col = db["settings"]
 
