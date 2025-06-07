@@ -1,8 +1,8 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import Config
+from config import DB_URL, DB_NAME
 
-client = AsyncIOMotorClient(Config.DB_URL)
-db = client[Config.DB_NAME]
+client = AsyncIOMotorClient(DB_URL)
+db = client[DB_NAME]
 settings_collection = db["UserSettings"]
 
 async def save_dump_channel(user_id: int, channel_id: str):
