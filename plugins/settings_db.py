@@ -1,4 +1,7 @@
 from config import Config
+from motor.motor_asyncio import AsyncIOMotorClient
+
+client = AsyncIOMotorClient(Config.DB_URL)
 
 client = MongoClient(Config.DB_URL)
 db = client[Config.DB_NAME]
