@@ -1,4 +1,4 @@
-1from config import Config
+from config import Config
 
 client = MongoClient(Config.DB_URL)
 db = client[Config.DB_NAME]
