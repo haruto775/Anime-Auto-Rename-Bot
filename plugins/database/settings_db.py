@@ -1,5 +1,5 @@
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import config
+from config import DB_URL, DB_NAME
 
 client = AsyncIOMotorClient(DB_URL)
 db = client[DB_NAME]
